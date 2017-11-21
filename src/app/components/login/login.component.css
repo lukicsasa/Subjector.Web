@@ -1,0 +1,133 @@
+.role {
+    font-size: 30px;
+    font-weight: bolder;
+    color: #1fa67b;
+    text-align: center;
+}
+
+.role-panel {
+    position: relative;
+    margin: 10px auto;
+    width: 40%;
+    height: 100px;
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 90px
+}
+
+.role-panel:hover {
+    background-color: #1fa67b;
+    cursor: pointer;
+    color: white;
+}
+
+.role-container {
+    margin: 30% auto;
+}
+
+.role-button {
+    width: 125px;
+    margin-top: 20px;
+    height: 50px;
+    background-color: #1fa67b;
+    color: white;
+}
+
+/*    --------------------------------------------------
+	:: Login Section
+	-------------------------------------------------- */
+    #login {
+        padding-top: 50px
+    }
+    #login .form-wrap {
+        width: 30%;
+        margin: 0 auto;
+    }
+    #login h1 {
+        color: #1fa67b;
+        font-size: 18px;
+        text-align: center;
+        font-weight: bold;
+    }
+    #login h2 {
+        color: #1fa67b;
+        font-size: 30px;
+        text-align: center;
+        font-weight: bold;
+    }
+    #login .form-group {
+        margin-bottom: 25px;
+    }
+    #login .checkbox {
+        margin-bottom: 20px;
+        position: relative;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+    }
+    #login .checkbox.show:before {
+        content: '\e013';
+        color: #1fa67b;
+        font-size: 17px;
+        margin: 1px 0 0 3px;
+        position: absolute;
+        pointer-events: none;
+        font-family: 'Glyphicons Halflings';
+    }
+    #login .checkbox .character-checkbox {
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        vertical-align: middle;
+        display: inline-block;
+    }
+    #login .checkbox .label {
+        color: #6d6d6d;
+        font-size: 13px;
+        font-weight: normal;
+    }
+    #login .btn.btn-custom {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    #login .forget {
+        font-size: 13px;
+        text-align: center;
+        display: block;
+    }
+    
+    /*    --------------------------------------------------
+        :: Inputs & Buttons
+        -------------------------------------------------- */
+    .form-control {
+        color: #212121;
+    }
+    .btn-custom {
+        color: #fff;
+        background-color: #1fa67b;
+    }
+    .btn-custom:hover,
+    .btn-custom:focus {
+        color: #fff;
+    }
+    
+    /*    --------------------------------------------------
+        :: Footer
+        -------------------------------------------------- */
+    #footer {
+        color: #6d6d6d;
+        font-size: 12px;
+        text-align: center;
+    }
+    #footer p {
+        margin-bottom: 0;
+    }
+    #footer a {
+        color: inherit;
+    }
