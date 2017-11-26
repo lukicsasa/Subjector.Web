@@ -1,0 +1,28 @@
+<app-header></app-header>
+<ul class="nav nav-tabs">
+  <li [class.active]="role === 3" (click)="role = 3;getUsers()"><a>Students</a></li>
+  <li [class.active]="role === 4" (click)="role = 4;getUsers()"><a>Professors</a></li>
+</ul>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Ref Code</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{user.firstName}}</td>
+      <td>{{user.lastName}}</td>
+      <td>{{user.refCode}}</td>
+      <td>{{user.email}}</td>
+      <td>
+        <button type="button" class="btn btn-success" (click)="acceptRequest(user.id)">Accept</button>
+        <button type="button" class="btn btn-danger" (click)="deleteRequest(user.id)">Decline</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

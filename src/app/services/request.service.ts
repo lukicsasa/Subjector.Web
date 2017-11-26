@@ -80,11 +80,15 @@ export class RequestService {
 		if (res.status < 200 || res.status >= 300) {
 			throw new Error('Bad response status: ' + res.status);
 		}
-		let body = res.json();
-		if (body.success == false) {
-			throw new Error(body.message);
+		try {
+			let body = res.json();
+			if (body.success == false) {
+				throw new Error(body.message);
+			}
+			return body || {};
+		} catch (e) {
+			//ignored
 		}
-		return body || {};
 	};
 	private handleError = (error: any) => {
 		let message = 'Error';
@@ -111,9 +115,9 @@ export class RequestService {
 	};
 
 	private handleValidationErrors = (obj: any) => {
-		for(var propertyName in obj) {
+		for (var propertyName in obj) {
 			this.alertService.showError(obj[propertyName]);
-		 }
+		}
 	}
 
 	objToGet(o): URLSearchParams {

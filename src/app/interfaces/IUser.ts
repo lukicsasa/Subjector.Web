@@ -5,4 +5,5 @@ export interface IUser {
 	email: string;
 	role: number;
 	password: string;
+	refCode: string;
 }

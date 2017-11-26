@@ -20,6 +20,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { UserService } from "./services/user.service";
 import { ErrorComponent } from "./components/error/error.component";
 import { DataStorageService } from "./services/datastore.service";
+import { RequestsComponent } from './components/requests/requests.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { DataStorageService } from "./services/datastore.service";
     NotfoundComponent,
     RegisterComponent,
     ErrorComponent,
+    RequestsComponent,
   ],
   imports: [
     BrowserModule,

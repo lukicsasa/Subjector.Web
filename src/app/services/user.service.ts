@@ -23,11 +23,31 @@ export class UserService {
   };
 
   register = (user: IUser) => {
-    return this.requestService.post('user/register', { ...user })
-      .map((response: Response) => {
-        return response.json;
-      });
+    return this.requestService.post('user/register', { ...user });
   }
+
+  getUsersRequests = (role: number): Observable<IUser[]> => {
+    return this.requestService.get('user/getUsersRequests?role=' + role)
+      .map((response) => {
+        return response;
+      });
+    // .flatMap((response: IUser[]) => {
+    //   return Observable.create(observer => {
+    //     observer.next(response);
+    //     observer.complete();
+    //   });
+    // });
+  }
+
+  acceptRequest = (userId: number) => {
+    return this.requestService.post('user/acceptRequest?userId=' + userId);
+  }
+
+  deleteRequest = (userId: number) => {
+    return this.requestService.post('user/deleteRequest?userId=' + userId);
+  }
+
+ 
 
   get(): Observable<IUser> {
     return this.requestService.get('user')

@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
 
       setTimeout(() => {
         this._router.navigate(['./login']);
-      }, 3000);
+      }, 1000);
     });
   }
 }
