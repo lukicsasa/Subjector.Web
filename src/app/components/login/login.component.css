@@ -24,7 +24,7 @@
 }
 
 .role-container {
-    margin: 30% auto;
+    margin: 15% auto;
 }
 
 .role-button {
@@ -33,6 +33,13 @@
     height: 50px;
     background-color: #1fa67b;
     color: white;
+}
+
+.register-btn {
+    color: #1fa67b;
+    cursor: pointer;
+    display: block;
+    text-align: center;
 }
 
 /*    --------------------------------------------------

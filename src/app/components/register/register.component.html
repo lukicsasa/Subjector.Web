@@ -1,3 +1,37 @@
-<div id="registerForm">
-
+<div>
+    <section id="login">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div>
+                        <h2>Student's registration</h2>
+                        <h1>Populate fields below</h1>
+                        <div role="form" id="register-form" autocomplete="off">
+                            <div class="form-group">
+                                <label for="email" class="register-field">Email</label>
+                                <input [(ngModel)]="user.email" type="email" name="email" class="form-control" placeholder="somebody@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="first-name" class="register-field">First Name</label>
+                                <input type="text" [(ngModel)]="user.firstName" name="first-name" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name" class="register-field">Last Name</label>
+                                <input type="text" [(ngModel)]="user.lastName" name="last-name" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="ref-code" class="register-field">Reference Code</label>
+                                <input type="text" [(ngModel)]="user.refCode" name="ref-code" class="form-control">
+                            </div>
+                            <input (click)="register()" type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Register">
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+                <!-- /.col-xs-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
 </div>

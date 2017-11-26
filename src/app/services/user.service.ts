@@ -11,10 +11,10 @@ export class UserService {
 
   constructor(private requestService: RequestService, private sessionService: SessionService, private cookieService: CookieService) { }
 
-  login = (username: string, password: string) => {
-    return this.requestService.post('login', { username: username, password: password, viewModelType: 'login' })
-      .flatMap((response: { data: { user: IUser, token: string } }) => {
-        this.sessionService.initSession(response.data.token, response.data.user);
+  login = (user: IUser) => {
+    return this.requestService.post('user/login', user)
+      .flatMap((response: {  user: IUser, token: string }) => {
+        this.sessionService.initSession(response.token, response.user);
         return Observable.create(observer => {
           observer.next(response);
           observer.complete();
@@ -23,7 +23,10 @@ export class UserService {
   };
 
   register = (user: IUser) => {
-    return this.requestService.post('register', { ...user, viewModelType: 'register' });
+    return this.requestService.post('user/register', { ...user })
+      .map((response: Response) => {
+        return response.json;
+      });
   }
 
   get(): Observable<IUser> {

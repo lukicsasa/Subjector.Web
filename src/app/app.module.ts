@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,6 +37,7 @@ import { DataStorageService } from "./services/datastore.service";
     BrowserModule,
     AppRoutingModule,
     HttpModule,
+    FormsModule,
     NgbModule.forRoot()
   ],
   providers: [DataStorageService,AlertService,AuthGuard,SessionService,RequestService,CookieService, UserService],

@@ -11,16 +11,20 @@ import { AlertService } from "../../services/alert.service";
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  user = {} as IUser;
 
   constructor(private _userService: UserService, private _alertService: AlertService, private _router: Router) { }
   ngOnInit() {
-    
+
   }
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
+  register = () => {
+    this._userService.register(this.user).subscribe(response => {
+      this._alertService.showSuccess("Request has been successfully sent!");
 
-   
+      setTimeout(() => {
+        this._router.navigate(['./login']);
+      }, 3000);
+    });
   }
 }
