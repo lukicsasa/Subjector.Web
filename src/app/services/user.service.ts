@@ -31,12 +31,6 @@ export class UserService {
       .map((response) => {
         return response;
       });
-    // .flatMap((response: IUser[]) => {
-    //   return Observable.create(observer => {
-    //     observer.next(response);
-    //     observer.complete();
-    //   });
-    // });
   }
 
   acceptRequest = (userId: number) => {
@@ -47,7 +41,9 @@ export class UserService {
     return this.requestService.post('user/deleteRequest?userId=' + userId);
   }
 
- 
+  addProfessor = (user: IUser) => {
+    return this.requestService.post('user/addProfessor', user);
+  }
 
   get(): Observable<IUser> {
     return this.requestService.get('user')

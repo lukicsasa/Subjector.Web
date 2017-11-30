@@ -1,7 +1,12 @@
 <app-header></app-header>
 <ul class="nav nav-tabs">
-  <li [class.active]="role === 3" (click)="role = 3;getUsers()"><a>Students</a></li>
-  <li [class.active]="role === 4" (click)="role = 4;getUsers()"><a>Professors</a></li>
+  <li [class.active]="role === 3" (click)="role = 3;getUsers()">
+    <a>Student Requests</a>
+  </li>
+  <li [class.active]="role === 4" (click)="role = 4;getUsers()">
+    <a>Professors</a>
+  </li>
+  <button (click)="showPopup()" *ngIf="role === 4" type="button" style="float:right;" class="btn btn-success">Add Professor</button>
 </ul>
 <table class="table table-hover">
   <thead>
@@ -26,3 +31,31 @@
     </tr>
   </tbody>
 </table>
+
+<popup (confirmClick)="addProfessor()">
+  <div>
+    <section>
+      <div class="container" style="width:100%">
+        <div class="row">
+          <div class="col-xs-12">
+            <div role="form" id="register-form" autocomplete="off">
+              <div class="form-group">
+                <label for="email" class="register-field">Email</label>
+                <input [(ngModel)]="user.email" type="email" name="email" class="form-control" placeholder="somebody@example.com">
+              </div>
+              <div class="form-group">
+                <label for="first-name" class="register-field">First Name</label>
+                <input type="text" [(ngModel)]="user.firstName" name="first-name" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="last-name" class="register-field">Last Name</label>
+                <input type="text" [(ngModel)]="user.lastName" name="last-name" class="form-control">
+              </div>
+            </div>
+            <hr>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</popup>

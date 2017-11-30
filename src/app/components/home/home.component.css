@@ -1,0 +1,20 @@
+.bg {
+    background-image: url("/assets/images/welcome.jpg");
+    position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;
+}
+
+.welcome {
+    margin: 20% auto;
+    text-align: center;
+    color: #1FA659;
+    font-family: monospace;
+}
+
+.welcome h1 {
+    font-size: 60px;
+}
+
+.welcome h2 {
+    font-size: 120px;
+    color: white;
+}

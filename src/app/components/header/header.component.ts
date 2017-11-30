@@ -8,10 +8,11 @@ import { Router } from "@angular/router";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  currentUser;
   constructor(private sessionService: SessionService, private router: Router) { }
 
   ngOnInit() {
+    this.currentUser = this.sessionService.user;
   }
 
   logout() {

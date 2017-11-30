@@ -6,4 +6,5 @@ export interface IUser {
 	role: number;
 	password: string;
 	refCode: string;
+	roleStr: string;
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from "../../services/user.service";
 import { IUser } from "../../interfaces/IUser";
+import { SessionService } from '../../services/session.service';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +9,11 @@ import { IUser } from "../../interfaces/IUser";
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  user = {} as IUser;
-  constructor(private _userService: UserService) { }
+
+  currentUser = {} as IUser;
+  constructor(private _userService: UserService, private sessionService: SessionService) { }
   ngOnInit() {
-    
+    this.currentUser = this.sessionService.user;
   }
 
   hanldeUpdateClick = (e) => {

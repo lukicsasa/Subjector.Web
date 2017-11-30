@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { IUser } from '../../interfaces/IUser';
 import { UserService } from '../../services/user.service';
 import { AlertService } from '../../services/alert.service';
+import { Popup } from 'ng2-opd-popup';
+
 
 @Component({
   selector: 'app-requests',
@@ -10,9 +12,10 @@ import { AlertService } from '../../services/alert.service';
 })
 export class RequestsComponent implements OnInit {
   users = [] as IUser[];
+  user = {} as IUser;
   role: number;
 
-  constructor(private userService: UserService, private alertService: AlertService) { }
+  constructor(private userService: UserService, private alertService: AlertService, private popup: Popup) { }
 
   ngOnInit() {
     this.role = 3;
@@ -39,4 +42,18 @@ export class RequestsComponent implements OnInit {
     });
   }
 
+  showPopup = () => {
+    this.popup.show({
+      header: "Add professor",
+      widthProsentage: 50
+    });
+  }
+
+  addProfessor = () => {
+    this.userService.addProfessor(this.user).subscribe(r => {
+      this.alertService.showSuccess("Email sent!");
+      this.getUsers();
+      this.popup.hide();      
+    })
+  }
 }

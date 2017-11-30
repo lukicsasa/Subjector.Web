@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
-import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +21,7 @@ import { UserService } from "./services/user.service";
 import { ErrorComponent } from "./components/error/error.component";
 import { DataStorageService } from "./services/datastore.service";
 import { RequestsComponent } from './components/requests/requests.component';
+import { PopupModule } from 'ng2-opd-popup';
 
 
 @NgModule({
@@ -40,9 +41,10 @@ import { RequestsComponent } from './components/requests/requests.component';
     AppRoutingModule,
     HttpModule,
     FormsModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    PopupModule.forRoot()
   ],
-  providers: [DataStorageService,AlertService,AuthGuard,SessionService,RequestService,CookieService, UserService],
+  providers: [DataStorageService, AlertService, AuthGuard, SessionService, RequestService, CookieService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,10 @@
 <app-header></app-header>
-<div id="homeView">
-    
+<div class="bg">
+    <div class="welcome">
+    <h1>welcome</h1>
+    <h2> {{currentUser.firstName}} {{currentUser.lastName}}
+        <br/> 
+        {{currentUser.refCode ? currentUser.refCode : '' }}
+    </h2>
+</div>
 </div>

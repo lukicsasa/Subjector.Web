@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
   selectRole = (role, name) => {
     this.role = role;
     this.roleName = name;
+    this.user.role = this.role;
   }
 
   goBack = () => {
