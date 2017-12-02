@@ -45,6 +45,10 @@ export class UserService {
     return this.requestService.post('user/addProfessor', user);
   }
 
+  changePassword = (password: any) => {
+    return this.requestService.post('user/changePassword', password);
+  }
+
   get(): Observable<IUser> {
     return this.requestService.get('user')
       .flatMap((response: IUser) => {

@@ -13,7 +13,8 @@ export class AlertService {
 	showError(message: string) {
 		let tmpMsg = {
 			detail: message,
-			type: 'danger'
+			type: 'danger',
+			duration: 5000
 		};
 		this._alert_emitter.next(tmpMsg);
 	}
